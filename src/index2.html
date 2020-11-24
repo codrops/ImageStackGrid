@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Image Stack Intro Animation | Demo 2 | Codrops</title>
+		<meta name="description" content="Some ideas for intro animations where an image stack moves to become a grid." />
+		<meta name="keywords" content="css, javascript, gsap, animation, uidesign, inspiration, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="https://use.typekit.net/lty4rfv.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo2.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+	</head>
+	<body class="loading noscroll">
+		<main data-scroll-container>
+			<div class="frame">
+				<h1 class="frame__title">Image Stack Intro Animation</h1>
+				<div class="frame__demos">
+					<a href="index.html" class="frame__demo">Demo 1</a>
+					<a href="index2.html" class="frame__demo frame__demo--current">Demo 2</a>
+				</div>
+				<div class="frame__links">
+					<a href="https://tympanus.net/Development/InlineMenuLayout/">Previous demo</a>
+					<a href="https://tympanus.net/codrops/?p=52018">Article</a>
+					<a href="https://github.com/codrops/ImageStackGrid/">GitHub</a>
+				</div>
+			</div>
+			<div class="content">
+				<h2 class="content__title" data-scroll data-scroll-speed="2" data-scroll-position="top">Pleasure City</h2>
+				<p class="content__text" data-scroll data-scroll-speed="1" data-scroll-position="top">It is difficult not to feel that the unconscious aim in the most typical modern pleasure resorts is a return to the womb. For there, too, one was never alone, one never saw daylight, the temperature was always regulated, one did not have to worry about work or food, and one's thoughts, if any, were drowned by a continuous rhythmic throbbing.</p>
+				<div class="gallery">
+					<figure data-scroll data-scroll-speed="1"  class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/6.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Questrial</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="2.5"  class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/7.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Coriolis</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="4" class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/8.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Eclipse</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="1"  class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/9.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Horizon</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="2.5"  class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/10.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Gibbous</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="4" class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/11.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Interstellar</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="1"  class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/12.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Neutron</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="2.5"  class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/13.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Orbital</h2>
+						</figcaption>
+					</figure>
+					<figure data-scroll data-scroll-speed="4" class="gallery__item">
+						<div class="gallery__item-img"><div class="gallery__item-imginner" style="background-image: url(img/14.jpg)"></div></div>
+						<figcaption class="gallery__item-caption">
+							<h2 class="gallery__item-title" data-splitting>Supernova</h2>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</main>
+		<svg class="cursor" width="30" height="30" viewBox="0 0 30 30">
+			<circle class="cursor__inner" cx="15" cy="15" r="7.5"/>
+		</svg>
+		<script src="js/demo2/index.js"></script>
+		<script src="https://tympanus.net/codrops/adpacks/cda.js"></script>
+	</body>
+</html>

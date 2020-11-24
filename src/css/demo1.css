@@ -1,0 +1,116 @@
+.title {
+	grid-area: content;
+	font-size: 15vw;
+	margin: 0;
+	font-family: ivypresto-headline, serif;
+	font-weight: 100;
+	justify-self: center;
+	align-self: center;
+	position: relative;
+	z-index: 1500;
+	color: #c5681c;
+	pointer-events: none;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: start;
+}
+
+.js .title {
+	opacity: 0;
+}
+
+.gallery {
+	grid-area: content;
+	justify-self: center;
+}
+
+.gallery__item {
+	position: relative;
+	margin: 25vh 0;
+	display: grid;
+	grid-template-areas: 'gallery-caption' 'gallery-image';
+	grid-template-columns: 100%;
+}
+
+.gallery__item-img {
+	grid-area: gallery-image;
+	width: calc(100vw - 30vw);
+	max-width: 375px;
+	overflow: hidden;
+	position: relative;
+	will-change: transform, opacity;
+	cursor: pointer;
+}
+
+.noscroll .gallery__item-img {
+	cursor: default;
+}
+
+.js .gallery__item-img {
+	opacity: 0;
+}
+
+.gallery__item-imginner {
+	background-size: cover;
+    background-position: 50% 0;
+    width: 100%;
+    padding-bottom: 140%;
+}
+
+.gallery__item-caption {
+	grid-area: gallery-caption;
+	padding: 0 0 1rem;
+}
+
+.gallery__item-title {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 10vw;
+	font-family: ivypresto-headline, serif;
+	font-weight: 100;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	bottom: 15%;
+	pointer-events: none;
+}
+
+.gallery__item-title span.char {
+	opacity: 0;
+	will-change: transform;
+}
+
+.gallery__item-number {
+	font-family: ivypresto-headline, serif;
+	font-weight: 100;
+	font-size: 2.5rem;
+	border-bottom: 1px solid #494444;
+	width: 100%;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.gallery__item-text {
+	margin: 0;
+}
+
+.gallery__item-number,
+.gallery__item-text {
+	opacity: 0;
+	will-change: transform, opacity;
+}
+
+@media screen and (min-width: 53em) {
+	.gallery__item {
+		grid-template-areas: 'gallery-filler gallery-image gallery-caption';
+		grid-template-columns: 15vw auto 15vw;
+	}
+	.gallery__item-caption {
+		padding: 0 0 0 1rem;
+	}
+}

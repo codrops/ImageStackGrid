@@ -1,0 +1,305 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 15px;
+}
+
+body {
+	margin: 0;
+	--color-text: #f8f6f3;
+	--color-bg: #0c0c0c;
+	--color-link: #7d6350;
+	--color-link-hover: #f8f6f3;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	--cursor-stroke: none;
+	--cursor-fill: #c5681c;
+	--cursor-stroke-width: 1px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: halyard-display, sans-serif;
+}
+
+.noscroll main {
+	overflow: hidden;
+	height: 100vh;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5, 0.5, 1);
+	}
+
+}
+
+a {
+	text-decoration: underline;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+main {
+	display: grid;
+	grid-template-areas: 'frame' 'content';
+}
+
+.frame {
+	padding: 1rem;
+	text-align: center;
+	position: relative;
+	z-index: 1000;
+	grid-area: frame;
+	font-weight: 300;
+}
+
+.frame__title {
+	font-size: 1rem;
+	margin: 0 0 1rem;
+	font-weight: 500;
+	position: relative;
+	padding: 0 3.5rem;
+}
+
+.frame__title::before,
+.frame__title::after {
+	content: '';
+	position: absolute;
+	width: 1rem;
+	height: 1.5rem;
+	border: 2px solid #c5681c;
+	left: 0;
+	top: calc(50% - 0.75rem);
+}
+
+.frame__title::before {
+	transform: rotate(-18deg);
+	transform-origin: top right;
+}
+
+.frame__links {
+	display: inline;
+}
+
+.frame__links a:not(:last-child),
+.frame__demos a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.frame__demos {
+	margin: 1rem 0;
+}
+
+.frame__demo--current,
+.frame__demo--current:hover {
+	color: var(--color-text);
+	text-decoration: none;
+}
+
+.cursor {
+	display: none;
+}
+
+/* Recommended styles for Splitting */
+.splitting .word,
+.splitting .char {
+	display: inline-block;
+}
+
+/* Psuedo-element chars */
+.splitting .char {
+	white-space: nowrap;
+	position: relative;
+}
+
+@media screen and (min-width:53em) {
+	:root {
+		font-size: 18px;
+	}
+	main {
+		grid-template-areas: 'content';
+		grid-template-rows: 100%;
+		grid-template-columns: 100%;
+		width: 100%;
+	}
+
+	.frame {
+		padding: 1.5rem 2rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.frame__title,
+	.frame__demos {
+		margin: 0;
+	}
+
+	.frame__demos {
+		margin: 0 auto 0 4rem;
+	}
+
+	.frame__links {
+		padding: 0;
+	}
+
+	.frame a {
+		pointer-events: auto;
+	}
+
+}
+
+@media (any-pointer:fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+	}
+
+	.cursor__inner {
+		fill: var(--cursor-fill);
+		stroke: var(--cursor-stroke);
+		stroke-width: var(--cursor-stroke-width);
+		opacity: 0.7;
+	}
+
+	.no-js .cursor {
+		display: none;
+	}
+
+}
+
+/*! locomotive-scroll v4.0.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+	overflow: hidden;
+}
+
+html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.has-scroll-smooth body {
+	overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+	white-space: nowrap;
+	height: 100vh;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	height: 100%;
+}
+
+.c-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 11px;
+	height: 100%;
+	transform-origin: center right;
+	transition: transform 0.3s, opacity 0.3s;
+	opacity: 0;
+}
+
+.c-scrollbar:hover {
+	transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+	opacity: 1;
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar {
+	width: 100%;
+	height: 10px;
+	top: auto;
+	bottom: 0;
+	transform: scaleY(1);
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+	transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.5;
+	width: 7px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+	right: auto;
+	bottom: 0;
+}
